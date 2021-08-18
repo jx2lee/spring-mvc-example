@@ -9,14 +9,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class ResponseViewController {
 
     @RequestMapping("/response-view-v1")
-    public ModelAndView ResponseViewV1() {
+    public ModelAndView responseViewV1() {
         ModelAndView mav = new ModelAndView("response/hello")
                 .addObject("data", "hello!");
         return mav;
     }
 
     @RequestMapping("/response-view-v2")
-    public String ResponseViewV2(Model model) {
+    public String responseViewV2(Model model) {
         model.addAttribute("data", "hello!");
         return "response/hello";
     }
@@ -26,7 +26,7 @@ public class ResponseViewController {
     * 해당 메서드를 보고 명확히 구분이 어려움
     **/
     @RequestMapping("/response/hello")
-    public void ResponseViewV3(Model model) {
+    public void responseViewV3(Model model) {
         model.addAttribute("data", "hello!");
     }
 }
